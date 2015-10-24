@@ -33,7 +33,7 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
-    'apps.common_static',
+    'apps.common',
     'apps.scheduler',
 )
 

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load i18n %}
+{% load i18n common %}
 
 {% block title %}{% trans 'Home' %} - {% endblock %}
 
@@ -7,8 +7,16 @@
     {% for date in scheduler_dates %}
         <div class="col-xs-6">
             <div class="page-header"><h4>{{ date }}</h4></div>
-
+            {% with serialized_sheduler=date|get_scheduler_date_fields %}
+                <dl class="dl-horizontal">
+                {% for name, value in serialized_sheduler.fields %}
+                    {% if value %}
+                        <dt>{{ name }}</dt>
+                        <dd>{{ value }}</dd>
+                    {% endif %}
+                {% endfor %}
+                </dl>
+            {% endwith %}
         </div>
     {% endfor %}
-
 {% endblock %}
