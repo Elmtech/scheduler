@@ -51,3 +51,4 @@ fabric.properties
 *.pyc
 .DS_Store
 *.sqlite3
+.env
