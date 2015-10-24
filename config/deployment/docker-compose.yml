@@ -1,0 +1,24 @@
+application:
+  build: .
+  dockerfile: python-dockerfile
+  container_name: scheduler-python
+
+nginx:
+  build: .
+  dockerfile: nginx-dockerfile
+  container_name: scheduler-nginx
+  ports:
+   - "80:80"
+  volumes_from:
+   - application
+  links:
+   - application:app
+
+ssh:
+  build: .
+  dockerfile: ssh-dockerfile
+  container_name: scheduler-ssh
+  ports:
+   - "21212:22"
+  volumes_from:
+   - application

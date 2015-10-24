@@ -1,0 +1,25 @@
+FROM python:3.4.3-wheezy
+
+ENV HOME_DIR "/home/webmaster"
+ENV APP_NAME "scheduler"
+
+# nginx conf path
+ENV NGINX_CONF_NAME "config/nginx/nginx.conf"
+ENV NGINX_CONF_PATH $HOME_DIR/$APP_NAME/$NGINX_CONF_NAME
+
+RUN apt-get update && \
+    apt-get install -y supervisor && \
+    apt-get install -y git && \
+    apt-get autoclean && apt-get -y autoremove
+
+RUN pip install --no-cache-dir -U pip && \
+    pip install --no-cache-dir -U virtualenv && \
+    pip install --no-cache-dir -U distribute
+
+RUN mkdir -p $HOME_DIR
+VOLUME [$HOME_DIR]
+
+WORKDIR HOME_DIR
+COPY python-entrypoint.sh /
+CMD ["/python-entrypoint.sh"]
+CMD ["supervisord", "-n", "-c", "scheduler/config/supervisor/supervisor.conf"]
