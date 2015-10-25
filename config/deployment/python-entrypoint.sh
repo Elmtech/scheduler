@@ -1,6 +1,9 @@
 #!/bin/bash
 
-if ! [ -f $HOME_DIR/$APP_NAME ];
+if ! [ -e /etc/supervisor/conf.d/$SUPERVISOR_CONF_NAME ] && [ $SUPERVISOR_CONF_PATH ] && [ -e $SUPERVISOR_CONF_PATH ]
   then
-    echo "Need to clone app"
+    echo "Making symbolic link for " $SUPERVISOR_CONF_PATH
+    ln -s $SUPERVISOR_CONF_PATH /etc/supervisor/conf.d/
 fi
+
+exec supervisord -n

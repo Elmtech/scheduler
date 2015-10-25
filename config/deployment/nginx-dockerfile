@@ -1,5 +1,4 @@
 FROM nginx:1.9.5
 
-COPY nginx-entrypoint.sh /
-CMD ["/nginx-entrypoint.sh"]
-CMD ["nginx", "-g", "daemon off;"]
+COPY ./config/deployment/nginx-entrypoint.sh /
+ENTRYPOINT ["/nginx-entrypoint.sh"]
