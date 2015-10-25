@@ -4,7 +4,7 @@ ENV HOME_DIR "/home/webmaster"
 
 RUN apt-get update && \
     apt-get install -y apt-utils && \
-    apt-get install -y openssh-server git keychain && \
+    apt-get install -y openssh-server git keychain vim bash-completion && \
     apt-get autoclean && apt-get -y autoremove
 
 RUN pip install --no-cache-dir -U pip && \
