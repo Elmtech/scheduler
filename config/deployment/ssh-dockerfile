@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM python:3.4.3-wheezy
 
 ENV HOME_DIR "/home/webmaster"
 
@@ -6,6 +6,10 @@ RUN apt-get update && \
     apt-get install -y apt-utils && \
     apt-get install -y openssh-server git && \
     apt-get autoclean && apt-get -y autoremove
+
+RUN pip install --no-cache-dir -U pip && \
+    pip install --no-cache-dir -U virtualenv && \
+    pip install --no-cache-dir -U distribute
 
 RUN useradd -m -s /bin/bash -d $HOME_DIR webmaster && \
     mkdir -p $HOME_DIR && \

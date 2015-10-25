@@ -12,15 +12,8 @@ ENV SUPERVISOR_CONF_NAME "supervisor.conf"
 ENV SUPERVISOR_CONF_PATH $HOME_DIR/$APP_NAME/config/supervisor/$SUPERVISOR_CONF_NAME
 
 RUN apt-get update && \
-    apt-get install -y supervisor git && \
+    apt-get install -y supervisor && \
     apt-get autoclean && apt-get -y autoremove
-
-RUN pip install --no-cache-dir -U pip && \
-    pip install --no-cache-dir -U virtualenv && \
-    pip install --no-cache-dir -U distribute
-
-RUN mkdir -p $HOME_DIR
-WORKDIR $HOME_DIR
 
 COPY ./config/deployment/python-entrypoint.sh /
 ENTRYPOINT ["/python-entrypoint.sh"]
