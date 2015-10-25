@@ -15,5 +15,5 @@ RUN apt-get update && \
     apt-get install -y supervisor && \
     apt-get autoclean && apt-get -y autoremove
 
-COPY ./config/deployment/python-entrypoint.sh /
+COPY ./python-entrypoint.sh /
 ENTRYPOINT ["/python-entrypoint.sh"]
