@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class SchedulerDate(models.Model):
-    field_a = models.DateField(verbose_name=_('תאריך לועזי'))
+    field_a = models.DateField(verbose_name=_('תאריך לועזי'), unique=True)
     field_b = models.CharField(verbose_name=_('יום בשבוע'), max_length=255, blank=True)
     field_c = models.CharField(verbose_name=_('פרשת'), max_length=255, blank=True)
     field_d = models.CharField(verbose_name=_('תאריך עברי'), max_length=255, blank=True)

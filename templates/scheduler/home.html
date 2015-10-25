@@ -8,14 +8,15 @@
         <div class="col-xs-6">
             <div class="page-header"><h4>{{ date }}</h4></div>
             {% with serialized_sheduler=date|get_scheduler_date_fields %}
-                <dl class="dl-horizontal">
                 {% for name, value in serialized_sheduler.fields %}
+                    <p class="text-right">
                     {% if value %}
-                        <dt>{{ name }}</dt>
-                        <dd>{{ value }}</dd>
+                        <span class="col-xs-2">{{ value }}</span>
+                        <span class="col-xs-6 text-left"><b>{{ name }}</b></span>
+                        <span class="col-xs-4">&nbsp;</span>
                     {% endif %}
+                    </p>
                 {% endfor %}
-                </dl>
             {% endwith %}
         </div>
     {% endfor %}
