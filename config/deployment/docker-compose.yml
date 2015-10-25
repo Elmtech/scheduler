@@ -1,6 +1,6 @@
 ssh:
   build: .
-  dockerfile: ./config/deployment/ssh-dockerfile
+  dockerfile: ssh-dockerfile
   container_name: scheduler-ssh
   ports:
    - "21212:22"
@@ -9,14 +9,14 @@ ssh:
 
 gunicorn:
   build: .
-  dockerfile: ./config/deployment/python-dockerfile
+  dockerfile: python-dockerfile
   container_name: scheduler-python
   volumes_from:
    - ssh
 
 nginx:
   build: .
-  dockerfile: ./config/deployment/nginx-dockerfile
+  dockerfile: nginx-dockerfile
   container_name: scheduler-nginx
   ports:
    - "80:80"

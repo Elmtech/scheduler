@@ -1,3 +1,4 @@
 -r common.txt
 
 ipython==4.0.0
+Fabric==1.10.2
