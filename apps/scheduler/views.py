@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from django.utils import timezone
+from datetime import datetime
 from django.views.generic import ListView
 
 from .models import SchedulerDate
@@ -11,4 +11,4 @@ class SchedulerHomeView(ListView):
     context_object_name = 'scheduler_dates'
 
     def get_queryset(self):
-        return SchedulerDate.objects.filter(field_a__gte=timezone.now().date())[:2]
+        return SchedulerDate.objects.filter(field_a__gte=datetime.now().date())[:2]
