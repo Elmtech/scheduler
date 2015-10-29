@@ -1,0 +1,22 @@
+FROM python:3.5.0
+
+ENV USER webmaster
+ENV USER_GROUP django
+ENV USER_ID 777
+ENV USER_GID 777
+ENV WORKDIR /opt/code
+
+RUN apt-get update && \
+    apt-get install -y supervisor && \
+    apt-get autoclean && apt-get -y autoremove
+
+RUN mkdir -p ${WORKDIR} && \
+    groupadd --gid ${USER_GID} ${USER_GROUP} && \
+    useradd -m -s /bin/bash --uid ${USER_ID} --gid ${USER_GID} ${USER} && \
+    pip install --no-cache-dir -U pip && \
+    pip install --no-cache-dir -U virtualenv && \
+    pip install --no-cache-dir -U distribute && \
+    chown -R ${USER}:${USER_GROUP} /opt/code
+
+USER ${USER}
+WORKDIR ${WORKDIR}

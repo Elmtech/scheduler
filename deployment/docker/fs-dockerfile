@@ -1,0 +1,15 @@
+FROM debian:jessie
+
+ENV USER webmaster
+ENV USER_GROUP django
+ENV USER_ID 777
+ENV USER_GID 777
+
+RUN mkdir -p /data/static /data/media /data/nginx /data/supervisor \
+    /data/log/supervisor /data/run
+
+RUN groupadd --gid ${USER_GID} ${USER_GROUP} && \
+    useradd -m -s /bin/bash --uid ${USER_ID} --gid ${USER_GID} ${USER} && \
+    chown -R ${USER}:${USER_GROUP} /data
+
+VOLUME /data

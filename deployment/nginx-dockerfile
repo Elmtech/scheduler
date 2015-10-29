@@ -1,4 +1,0 @@
-FROM nginx:1.9.5
-
-COPY ./nginx-entrypoint.sh /
-ENTRYPOINT ["/nginx-entrypoint.sh"]
