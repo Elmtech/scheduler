@@ -1,0 +1,29 @@
+filestorage:
+  build: .
+  dockerfile: deployment/docker/fs-dockerfile
+  container_name: filestorage
+  volumes:
+   - ./config/nginx:/data/nginx
+   - ./config/supervisor:/data/supervisor
+
+application:
+  build: .
+  dockerfile: deployment/docker/app-dockerfile
+  container_name: application
+  volumes_from:
+   - filestorage
+  volumes:
+   - .:/opt/code
+  env_file: .env
+  command: deployment/docker/app-entrypoint.sh
+
+nginx:
+  build: .
+  dockerfile: deployment/docker/nginx-dockerfile
+  container_name: nginx
+  ports:
+   - "80:80"
+  volumes_from:
+   - filestorage
+  links:
+   - application:app

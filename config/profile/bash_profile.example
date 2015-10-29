@@ -1,4 +1,0 @@
-source $HOME/scheduler/env/bin/activate
-cd $HOME/scheduler/
-
-eval `keychain --eval id_rsa`
