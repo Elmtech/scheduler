@@ -53,3 +53,5 @@ fabric.properties
 *.sqlite3
 .env
 env
+schdualler.*
+

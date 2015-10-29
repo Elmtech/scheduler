@@ -6,7 +6,7 @@
 {% block content %}
     {% for date in scheduler_dates %}
         <div class="col-xs-6">
-            <div class="page-header"><h4>{{ date }}</h4></div>
+            <div class="page-header">{{ date }}</div>
             {% with serialized_sheduler=date|get_scheduler_date_fields %}
                 {% for name, value in serialized_sheduler.fields %}
                     <p class="text-right">
