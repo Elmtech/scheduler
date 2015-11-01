@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-01 21:19+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps/scheduler/models.py:8
+msgid "תאריך לועזי"
+msgstr ""
+
+#: apps/scheduler/models.py:9
+msgid "יום בשבוע"
+msgstr ""
+
+#: apps/scheduler/models.py:10
+msgid "פרשת"
+msgstr ""
+
+#: apps/scheduler/models.py:11
+msgid "תאריך עברי"
+msgstr ""
+
+#: apps/scheduler/models.py:12
+msgid "הערה"
+msgstr ""
+
+#: apps/scheduler/models.py:13
+msgid "משנה והלכה יומית"
+msgstr ""
+
+#: apps/scheduler/models.py:14
+msgid "שחרית מנין א"
+msgstr ""
+
+#: apps/scheduler/models.py:15
+msgid "שחרית מנין ב"
+msgstr ""
+
+#: apps/scheduler/models.py:16
+msgid "שעור בדף היומי"
+msgstr ""
+
+#: apps/scheduler/models.py:17
+msgid "שעור לנשים"
+msgstr ""
+
+#: apps/scheduler/models.py:18
+msgid "מנחה גדולה"
+msgstr ""
+
+#: apps/scheduler/models.py:19
+msgid "מנחה קטנה"
+msgstr ""
+
+#: apps/scheduler/models.py:20
+msgid "שעור עין יעקב"
+msgstr ""
+
+#: apps/scheduler/models.py:21
+msgid "ערבית מנין א"
+msgstr ""
+
+#: apps/scheduler/models.py:22
+msgid "הערה ב"
+msgstr ""
+
+#: apps/scheduler/models.py:23
+msgid "לאחר ערבית שעור מפי הרב"
+msgstr ""
+
+#: apps/scheduler/models.py:24
+msgid "שעור גמ' מסכת יומא"
+msgstr ""
+
+#: apps/scheduler/models.py:25
+msgid "שעור בנביא ממו\"ר הרב שליט\"א"
+msgstr ""
+
+#: apps/scheduler/models.py:26
+msgid "ערבית מנין ב'"
+msgstr ""
+
+#: apps/scheduler/models.py:27
+msgid "שעור משניות מפי הרב מרדכי אדלשטיין"
+msgstr ""
+
+#: apps/scheduler/models.py:28
+msgid "הדלקת נרות"
+msgstr ""
+
+#: apps/scheduler/models.py:29
+msgid "שחרית"
+msgstr ""
+
+#: apps/scheduler/models.py:30
+msgid "משנה יומית"
+msgstr ""
+
+#: apps/scheduler/models.py:31
+msgid "שעור הדף היומי"
+msgstr ""
+
+#: apps/scheduler/models.py:32
+msgid "מנחה"
+msgstr ""
+
+#: apps/scheduler/models.py:33
+msgid "ערבית וצאת השבת"
+msgstr ""
+
+#: templates/common/include/header.html:11
+msgid "Scheduler"
+msgstr "סדר יום ומחר"
+
+#: templates/scheduler/home.html:4
+msgid "Home"
+msgstr ""
