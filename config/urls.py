@@ -8,7 +8,7 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', include('apps.scheduler.urls', namespace='scheduler')),
+    url(r'^', include('apps.scheduler.urls', namespace='scheduler')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
