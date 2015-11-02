@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load i18n common bootstrap3 %}
+
+{% block title %}{% trans 'Home' %} - {% endblock %}
+
+{% block content %}
+    <form class="form form-horizontal" method="post" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">
+                {% trans 'Upload' %}
+            </button>
+        {% endbuttons %}
+    </form>
+{% endblock %}
